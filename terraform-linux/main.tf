@@ -19,7 +19,6 @@ ansible = {
       source = "nbering/ansible"
       version = "1.0.4"
 }
-
   }
 }
 provider "vsphere" {
@@ -30,6 +29,12 @@ provider "vsphere" {
 
   # If you have a self-signed cert
   allow_unverified_ssl = var.vsphere-unverified-ssl
+}
+
+module "vm" {
+  source  = "Terraform-VMWare-Modules/vm/vsphere"
+  version = "3.0.0"
+  # insert the 47 required variables here
 }
 
 # Define VMware vSphere 
